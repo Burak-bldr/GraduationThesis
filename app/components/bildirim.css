@@ -1,0 +1,100 @@
+
+.notifications-container {
+    position: relative;
+}
+
+.notification-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+.badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 12px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+.notifications {
+  position: absolute; /* Panelin sabit bir yere oturmasını sağlar */
+  font-size: smaller;
+  top: 50px;
+  right: 0;
+  width: 300px; /* İsteğe bağlı genişlik */
+  max-height: 400px; /* Yükseklik sınırı */
+  overflow-y: auto; /* Kaydırma ekler */
+  background: rgb(0, 0, 0);
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 100;
+}
+
+
+.notification {
+    border-bottom: 1px solid #030303;
+    padding: 10px;
+    max-height: fit-content;
+}
+
+.accept-btn {
+    background: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.reject-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+
+.notification button {
+  margin: 5px;
+}
+
+.close-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+.cancel-btn{
+  border: 1px solid white;
+  width:210px;
+}
+.delete-btn{
+  border: 1px solid white;
+  width:210px;
+  
+
+}
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

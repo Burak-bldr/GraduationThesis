@@ -1,0 +1,79 @@
+.reservation-modal {
+    border-radius: 12px;
+    position: fixed !important;
+    width: 480px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: rgba(255, 255, 255, 0.95); /* Hafif şeffaf beyaz arka plan */
+    border: 1px solid #ddd;
+    padding: 25px;
+    z-index: 1000;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Başlık */
+  .reservation-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Giriş Alanları */
+  .reservation-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .reservation-inputs label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .reservation-inputs input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Butonlar */
+  .reservation-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .reservation-submit {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .reservation-submit:hover {
+    background-color: #1ce647;
+  }
+  
+  .reservation-cancel {
+    background-color: #fd0019;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .reservation-cancel:hover {
+    background-color: #c82333;
+  }
+  

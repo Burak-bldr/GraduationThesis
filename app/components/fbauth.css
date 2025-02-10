@@ -1,0 +1,72 @@
+ .tümdiv{
+
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(240, 236, 236);
+
+    width: 500px;
+    height: 400px;
+
+    justify-content: center;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+
+
+
+}
+
+input{
+    border-radius: 4px;
+    margin-left: 30px;
+    height: 35px;
+    border:2px solid gray;
+
+    margin-top: 20px;
+}
+
+button{
+    
+width: 130px;
+border: 1px solid black;
+margin: 20px;
+padding: 4px;
+border-radius: 4px;
+display: flex;
+flex-direction: row;
+
+
+}
+
+button:hover{
+
+background-color: rgb(82, 236, 90);
+cursor: pointer;
+
+}
+.fbauthbtn{
+    color: rgb(5, 5, 5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 40px;
+
+
+}
+.account:hover{
+
+    cursor: pointer;
+}
+.loading{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+
+
+} 
+ 
+ 

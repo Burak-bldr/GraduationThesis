@@ -1,0 +1,206 @@
+/* .station-details-modal {
+    position: fixed;
+    width: 480px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: center;
+    height: 700px;
+}
+
+.station-details-modal h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.station-details-modal p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.inp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    background: #f8f9fa;
+}
+
+.inp label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    flex: 1;
+    text-align: left;
+}
+
+.inp input {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+    outline: none;
+    font-size: 14px;
+}
+
+
+.inb {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.inb:hover {
+    background-color: #218838;
+}
+
+.inb:active {
+    background-color: #1e7e34;
+}
+
+
+.inb:last-child {
+    background-color: #64dc35;
+}
+
+.inb:last-child:hover {
+    background-color: #23c839;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -20%);
+    }
+} */
+
+
+.station-details-modal {
+    position: fixed;
+    width: 420px; /* Genişliği biraz küçülttüm */
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: center;
+    height: 500px; /* Yüksekliği azalttım */
+    overflow-y: auto; /* İçerik fazla olursa scrollbar göstersin */
+}
+
+.station-details-modal h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.station-details-modal p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Giriş alanlarını düzenleme */
+.inp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px; /* Daha az boşluk bırak */
+    padding: 6px;
+    border-radius: 6px;
+    background: #f8f9fa;
+}
+
+.inp label {
+    font-size: 13px; /* Font boyutunu biraz küçülttüm */
+    color: #333;
+    font-weight: 500;
+    flex: 1;
+    text-align: left;
+}
+
+.inp input {
+    width: 50px; /* Input kutularını küçülttüm */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    font-size: 13px;
+}
+
+/* Buton tasarımları */
+.inb {
+    width: 100px;
+    padding: 8px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: rgb(253, 251, 251);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.inb:hover {
+    background-color: #218838;
+}
+
+.inb:active {
+    background-color: #1e7e34;
+}
+
+/* Kapat butonu farklı renkte */
+.inb:last-child {
+    background-color: #64dc35;
+}
+
+.inb:last-child:hover {
+    background-color: #23c839;
+}
+
+/* Açılma animasyonu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -20%);
+    }
+}
