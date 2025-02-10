@@ -5,7 +5,7 @@ const cors = require("cors");
 
 
 app.use(cors());
- const apiKey = 'AIzaSyCJgHH-Kj5xK54yygT6VFA32A5z_MHFDGk'
+ const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 app.get("/api/nearby-charging-stations", async (req, res) => {
    
   const { lat, lng, radius, type, } = req.query;
