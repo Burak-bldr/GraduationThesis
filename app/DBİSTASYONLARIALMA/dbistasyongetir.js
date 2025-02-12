@@ -1,13 +1,13 @@
 import { getDatabase, ref, get } from "firebase/database";
 
 export const fetchLocationsFromRealtimeDB = async () => {
-  const db = getDatabase(); // Realtime Database referansı
-  const locationsRef = ref(db, "stations"); // "locations" yolunu referans al
+  const db = getDatabase(); 
+  const locationsRef = ref(db, "stations"); 
   const snapshot = await get(locationsRef);
 
   if (snapshot.exists()) {
-    const data = snapshot.val(); // Tüm veriyi alır
-    // Verileri bir diziye dönüştür
+    const data = snapshot.val(); 
+    
     return Object.keys(data).map((key) => ({
       id: key,
       ...data[key],

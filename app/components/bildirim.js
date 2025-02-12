@@ -9,7 +9,7 @@ import "./bildirim.css";
 import { IoNotificationsOutline } from "react-icons/io5";
 
 
-const Notifications = ({ location }) => {
+const Notifications = () => {
     const [notifications, setNotifications] = useState([]);
     const [userResponses, setUserResponses] = useState([]); 
     const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +19,6 @@ const Notifications = ({ location }) => {
         if (!currentUser) return;
 
         const reservationRef = ref(database, "reservations");
-
-    
         onChildAdded(reservationRef, (snapshot) => {
             const newReservation = snapshot.val();
             if (newReservation.ownerEmail === currentUser.email) {
@@ -30,8 +28,6 @@ const Notifications = ({ location }) => {
                 setUserResponses((prev) => [...prev, { id: snapshot.key, ...newReservation }]);
             }
         });
-
-       
         onChildChanged(reservationRef, (snapshot) => {
             const updatedReservation = snapshot.val();
             if (updatedReservation.ownerEmail === currentUser.email) {
@@ -59,26 +55,19 @@ const Notifications = ({ location }) => {
             if (snapshot.exists()) {
                 const stationData = snapshot.val();
                 callback(stationData.latitude, stationData.longitude);
-            } else {
-                console.error("İstasyon konumu bulunamadı.");
+            } else { console.error("İstasyon konumu bulunamadı.");
             }
-        } catch (error) {
-            console.error("İstasyon konumu alınamadı:", error);
+        } catch (error) {console.error("İstasyon konumu alınamadı:", error);
         }
     };
-
-  
-    const startNavigation = (stationId) => {
-        if (!stationId) {
-            console.error("İstasyon ID bulunamadı.");
+     const startNavigation = (stationId) => {
+        if (!stationId) {console.error("İstasyon ID bulunamadı.");
             return;
         }
-
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const userLat = position.coords.latitude;
                 const userLng = position.coords.longitude;
-
                 fetchStationLocation(stationId, (latitude, longitude) => {
                     if (latitude && longitude) {
                         const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${latitude},${longitude}`;
@@ -169,7 +158,7 @@ return (
                                     </>
                                 ) : notif.status === "accepted" ? (
                                     <>
-                                        <p style={{ color: "green", fontWeight: "bold" }}>Rezervasyon Onaylandı ✅</p>
+                                        <p style={{ color: "green", fontWeight: "bold" }}>Rezervasyonu Onayladınız ✅</p>
                                         <button className="cancel-btn" onClick={() => handleCancelReservation(notif.id)}>
                                             Rezervasyonu İptal Et
                                         </button>
@@ -190,7 +179,7 @@ return (
                         {userResponses.map((notif) => (
                             <div key={notif.id} className="notification">
                                 <p>
-                                    {notif.date} tarihinde, {notif.time} saatinde yaptığınız rezervasyon: 
+                                    {notif.date} tarihi, {notif.time} saati için  yaptığınız rezervasyon: 
                                     <strong>
                                         {notif.status === "accepted"
                                             ? "Onaylandı ✅"

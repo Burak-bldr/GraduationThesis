@@ -34,11 +34,6 @@ function ReservationModal  ({ station, onClose }) {
         }
     
         try {
-            console.log("Rezervasyon gönderiliyor, stationId:", stationId);
-            console.log("İstasyon Sahibi (ownerEmail):", station.addedBy);
-            console.log("Rezervasyon Yapan (requestedBy):", currentUser.email);
-    
-            
             const reservationData = {
                 stationId: stationId,  
                 date,

@@ -1,9 +1,6 @@
-// Gerekli SDK fonksiyonlarını Firebase'den import ediyoruz
+
 import { initializeApp } from "firebase/app";
-
-//! database için import 
 import { getDatabase } from "firebase/database";
-
 import { getAuth } from "firebase/auth";
 
 
@@ -20,10 +17,5 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-
-
-
-
 export const auth = getAuth(app);
-//! database export 
 export const database = getDatabase(app);

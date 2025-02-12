@@ -1,11 +1,16 @@
+require("dotenv").config({path:"./.env.local"})
 const express = require("express");
 const axios = require("axios");
 const app = express();
 const cors = require("cors");
 
 
+
+
 app.use(cors());
- const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+
+ const apiKey = process.env.GOOGLE_MAPS_API_KEY
+
 app.get("/api/nearby-charging-stations", async (req, res) => {
    
   const { lat, lng, radius, type, } = req.query;

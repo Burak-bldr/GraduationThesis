@@ -13,7 +13,7 @@ function IstasyonEkleme({ konum }) {
   const [type, setType] = useState(""); 
   const [visible, setVisible] = useState(true);
 
-  //! Konum prop'u güncellendiğinde state'i güncelle
+ 
   useEffect(() => {
     if (konum.lat !== null && konum.lng !== null) {
       setLat(konum.lat);
@@ -28,11 +28,11 @@ function IstasyonEkleme({ konum }) {
     }
 
     try {
-        const newDocRef = push(ref(database, "stations")); //  Firebase'de otomatik key oluştur
-        const newDocKey = newDocRef.key; // Firebase'in otomatik oluşturduğu key'i al
+        const newDocRef = push(ref(database, "stations")); 
+        const newDocKey = newDocRef.key; 
 
         await set(newDocRef, {
-            id: newDocKey,  // Firebase'in oluşturduğu ID' iel istasyonumuz kaydoluyor  
+            id: newDocKey,   
             latitude: parseFloat(latitude),
             longitude: parseFloat(longitude),
             type: type,

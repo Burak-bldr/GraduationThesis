@@ -14,14 +14,15 @@ export default function Home() {
         className="object-cover"
       />
      
-      <h1 className="absolute top-3 right-50 text-white text-3xl font-bold bg-black bg-opacity-90 px-4 py-2 rounded-lg">Welcome to EV way</h1>
+      <h1 className="absolute top-3 right-50 text-white text-3xl font-bold bg-black bg-opacity-90 px-4 py-2 rounded-lg">Welcome to EV Way</h1>
 
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="bg-black bg-opacity-90 text-white p-6 rounded-lg max-w-3xl text-center">
-          <h2 className="text-2xl font-semibold mb-2">EV Way Nedir?</h2>
+          <h2 className="text-2xl font-semibold mb-2">What is EV Way?</h2>
           <p className="text-lg">
-            EV Way, elektrikli araç sahiplerinin birbirleriyle şarj istasyonlarını paylaşmalarını sağlayan yenilikçi bir platformdur.
-            Kullanıcılar, kendi şarj istasyonlarını kiralayabilir, yakındaki istasyonları haritada görüntüleyebilir ve rezervasyon yapabilirler.
+ 
+          EV Way is an innovative platform that allows electric vehicle owners to share charging stations with each other.
+            Users can rent their own charging stations, view nearby stations on the map and make reservations.
 
           </p>
         </div>

@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
 import ClipLoader from "react-spinners/ClipLoader";
 import { useAuth } from "../hookum/useauth"
-import { getStationData } from "../FBİstasyonkayıt/fireBase"; // Firebase fonksiyonunu ekle
+import { getStationData } from "../FBİstasyonkayıt/fireBase"; 
 import Randevu from "../components/randevu"
 import { fetchLocationsFromRealtimeDB } from "../DBİSTASYONLARIALMA/dbistasyongetir";
 import Istasyonekle from "../components/istasyonekleme"
@@ -113,11 +113,8 @@ const { isLoaded } = useJsApiLoader({
       const lng = userLocation.lng;
       const radius = 50000;
       const type = 'electric_vehicle_charging_station';
-
       const apikey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-
-
-      try {
+try {
         const response = await fetch(`http://localhost:5000/api/nearby-charging-stations?lat=${lat}&lng=${lng}&radius=${radius}&type=${type}&apiKey=${apikey}`);
         const data = await response.json();
 
@@ -130,6 +127,7 @@ const { isLoaded } = useJsApiLoader({
               lng: station.geometry.location.lng,
             },
           }));
+          
           setChargingStations(stations);
         }
       } catch (error) {
@@ -261,12 +259,7 @@ const { isLoaded } = useJsApiLoader({
 
 
 
-
-
-
-
-
-      {chargingStations.map((station) => (
+  {chargingStations.map((station) => (
         <Marker
           key={station.key}
           position={station.location}
@@ -283,16 +276,6 @@ const { isLoaded } = useJsApiLoader({
           }}
         />
       ))}
-
-
-
-
-
-
-
-
-
-
       {userStations.map((station) => (
         <Marker
           key={station.id}
@@ -312,13 +295,6 @@ const { isLoaded } = useJsApiLoader({
           }}
         />
       ))}
-
-
-
-
-
-
-
       {showReservationModal && selectedStation && selectedStation.addedBy && (
         <Randevu
           station={selectedStation}
@@ -340,24 +316,13 @@ const { isLoaded } = useJsApiLoader({
           }}
         />
       )}
-
-
-
-
-
       {currentUser ? (<div style={{ position: "absolute", top: "10px", left: "1000px" }} >
 
         <Istasyonekle konum={userLocation} />
 
 
       </div>) : (<h1> İstasyon eklemek için kayıt olmanız yada giriş yapmanız gerekmektedir</h1>)}
-
-
-
-
-
-
-    </GoogleMap>
+ </GoogleMap>
 
 
   ) : (

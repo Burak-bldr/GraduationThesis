@@ -1,7 +1,4 @@
 import { getDatabase, ref, set,get } from "firebase/database";
-
-
-//! deneme
 const database = getDatabase();
  const saveStationData = async (stationId, stationData) => {
   try {
@@ -14,9 +11,9 @@ const database = getDatabase();
       };
 
       await set(stationRef, stationWithUser);
-      console.log("✅ Şarj istasyonu başarıyla kaydedildi:", stationWithUser);
+      console.log(" Şarj istasyonu başarıyla kaydedildi:", stationWithUser);
   } catch (error) {
-      console.error("❌ Şarj istasyonu kaydında hata:", error);
+      console.error(" Şarj istasyonu kaydında hata:", error);
   }
 };
 
@@ -28,10 +25,10 @@ const database = getDatabase();
 
 const getStationData = async (stationId) => {
     try {
-        console.log("🔍 Firebase'den veri alınıyor, Station ID:", stationId);
+        console.log(" Firebase'den veri alınıyor, Station ID:", stationId);
         
         if (!stationId) {
-            console.error("⛔ Hata: stationId eksik veya geçersiz!");
+            console.error(" Hata: stationId eksik veya geçersiz!");
             return null;
         }
 
@@ -40,14 +37,14 @@ const getStationData = async (stationId) => {
         const snapshot = await get(stationRef);
 
         if (snapshot.exists()) {
-            console.log("✅ Firebase'den gelen veri:", snapshot.val());
+            console.log(" Firebase'den gelen veri:", snapshot.val());
             return snapshot.val();
         } else {
-            console.warn("⚠️ Firebase'de bu istasyon için veri bulunamadı.");
+            console.warn(" Firebase'de bu istasyon için veri bulunamadı.");
             return null;
         }
     } catch (error) {
-        console.error("❌ Firebase verisi alınırken hata oluştu:", error);
+        console.error(" Firebase verisi alınırken hata oluştu:", error);
         return null;
     }
 };

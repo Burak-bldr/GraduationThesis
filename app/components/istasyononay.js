@@ -14,17 +14,15 @@ const StationDetails = ({ station, onClose}) => {
   }
 
 
+  
+  
   const [acStations, setAcStations] = useState(0);
   const [dcStations, setDcStations] = useState(0);
   const [acInUse, setAcInUse] = useState(0);
   const [dcInUse, setDcInUse] = useState(0);
   const [faultyAC, setFaultyAC] = useState(0);
   const [faultyDC, setFaultyDC] = useState(0);
-  
-  
-
-
-  useEffect(() => {
+   useEffect(() => {
     if (station) {
       setAcStations(station.acStations || 0);
       setDcStations(station.dcStations || 0);
@@ -35,24 +33,12 @@ const StationDetails = ({ station, onClose}) => {
       
     }
   }, [station]); 
-
-  let currentUser = useAuth();
-
-  const handleSave = () => {
-
-
-    const updatedStation = {
-      ...station,
-      acStations,
-      dcStations,
-      inUseAC: acInUse,
-      inUseDC: dcInUse,
-      faultyAC: faultyAC,
-      faultyDC: faultyDC,
-     
-    };
-
-    console.log("Firebase'e kaydedilecek veri:", updatedStation);
+let currentUser = useAuth();
+const handleSave = () => {
+const updatedStation = {
+      ...station, acStations,dcStations,inUseAC: acInUse,inUseDC: dcInUse,faultyAC: faultyAC,faultyDC: faultyDC,
+     };
+console.log("Firebase'e kaydedilecek veri:", updatedStation);
 
     saveStationData(String(station.key), updatedStation)
       .then(() => console.log("Firebase'e başarıyla kaydedildi"))
@@ -122,7 +108,7 @@ const StationDetails = ({ station, onClose}) => {
 
 
 
-      {currentUser ? ( <div>   <button className="inb" onClick={handleSave}>Kaydet</button>
+      {currentUser ? ( <div style={{ display:"flex",justifyContent:"space-between"}}>   <button className="inb" onClick={handleSave}>Kaydet</button>
       <button className="inb" onClick={onClose}>Kapat</button></div>
    
     ) : (   <button className="inb" onClick={onClose}>Kapat</button>)}

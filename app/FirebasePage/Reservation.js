@@ -1,8 +1,8 @@
 
 
 
-import { getDatabase, ref, push, set } from "firebase/database";
-import { database } from "../FirebasePage/firebase"; // Firebase bağlantısı
+import {  ref, push, set } from "firebase/database";
+import { database } from "../FirebasePage/firebase"; 
 
 export const saveReservationRequest = async (reservationData) => {
     try {
@@ -10,8 +10,8 @@ export const saveReservationRequest = async (reservationData) => {
 
         await set(reservationRef, reservationData);
 
-        console.log("✅ Rezervasyon başarıyla kaydedildi:", reservationData);
+      
     } catch (error) {
-        console.error("❌ Rezervasyon kaydedilirken hata oluştu:", error);
+        
     }
 };
